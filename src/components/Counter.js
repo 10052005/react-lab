@@ -12,11 +12,16 @@ class Counter extends Component {
     this.setState({ count: this.state.count + 1 });
   };
 
+  reset = () => {
+    this.setState({ count: this.props.initialCount });
+  };
+
   render() {
     return (
       <div>
         <h2>Count: {this.state.count}</h2>
         <button onClick={this.increment}>Increment</button>
+        <button onClick={this.reset}>Reset</button>
       </div>
     );
   }
